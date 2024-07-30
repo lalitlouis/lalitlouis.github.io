@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kubernetes Debugger Pro - Streamline Your K8s Workflow</title>
+    <title>Kubernetes Debugger Pro - All-in-One DevOps Tool</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #3498db;
-            --secondary-color: #2c3e50;
-            --accent-color: #e74c3c;
+            --primary-color: #4a69bd;
+            --secondary-color: #1e3799;
+            --accent-color: #eb2f06;
             --text-color: #333;
-            --light-bg: #ecf0f1;
+            --light-bg: #f1f2f6;
         }
         body, html {
             margin: 0;
@@ -20,29 +20,31 @@
             line-height: 1.6;
             color: var(--text-color);
             height: 100%;
+            background-color: var(--light-bg);
         }
         .container {
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-        header {
-            background-color: var(--secondary-color);
-            color: white;
-            padding: 1rem 0;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        nav {
             max-width: 1200px;
             margin: 0 auto;
+            padding: 0 20px;
+        }
+        header {
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0 20px;
+            padding: 1rem 0;
         }
         .logo {
             font-size: 1.5rem;
             font-weight: bold;
+            color: var(--primary-color);
         }
         nav ul {
             list-style: none;
@@ -52,80 +54,113 @@
             margin-left: 20px;
         }
         nav ul li a {
-            color: white;
+            color: var(--text-color);
             text-decoration: none;
             transition: color 0.3s ease;
         }
         nav ul li a:hover {
             color: var(--primary-color);
         }
-        main {
-            flex-grow: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, var(--light-bg) 0%, #ffffff 100%);
-        }
-        .hero {
-            text-align: center;
-            padding: 50px 20px;
-            max-width: 800px;
-        }
-        h1 {
-            font-size: 3rem;
-            color: var(--secondary-color);
-            margin-bottom: 0.5rem;
-        }
-        .tagline {
-            font-size: 1.5rem;
-            color: var(--primary-color);
-            margin-bottom: 2rem;
-        }
         .cta-button {
-            display: inline-block;
             background-color: var(--accent-color);
             color: white;
-            padding: 12px 24px;
-            text-decoration: none;
+            padding: 10px 20px;
             border-radius: 5px;
+            text-decoration: none;
             font-weight: bold;
             transition: background-color 0.3s ease;
         }
         .cta-button:hover {
             background-color: #c0392b;
         }
-        footer {
-            background-color: var(--secondary-color);
+        main {
+            padding-top: 80px;
+            display: flex;
+            align-items: center;
+            min-height: calc(100vh - 80px);
+        }
+        .hero {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .hero-text {
+            flex: 1;
+            padding-right: 50px;
+        }
+        .hero-image {
+            flex: 1;
+            text-align: right;
+        }
+        .hero-image img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .changing-text {
+            font-size: 3.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        .tagline {
+            font-size: 1.2rem;
+            color: var(--secondary-color);
+            margin-bottom: 2rem;
+        }
+        .word-cloud {
+            background-color: var(--primary-color);
             color: white;
+            padding: 2rem 0;
             text-align: center;
-            padding: 1rem 0;
-            margin-top: auto;
+            font-size: 0.9rem;
+            line-height: 2;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
+    <header>
+        <div class="container">
             <nav>
                 <div class="logo">KDP</div>
                 <ul>
                     <li><a href="#features">Features</a></li>
-                    <li><a href="#download">Download</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
                     <li><a href="#docs">Docs</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
+                <a href="#get-started" class="cta-button">Get Started</a>
             </nav>
-        </header>
-        <main>
-            <div class="hero">
-                <h1>Kubernetes Debugger Pro</h1>
-                <p class="tagline">Unlock the full potential of your Kubernetes clusters</p>
-                <a href="#download" class="cta-button">Get Started</a>
+        </div>
+    </header>
+    <main>
+        <div class="container hero">
+            <div class="hero-text">
+                <h1>Tool for</h1>
+                <div class="changing-text" id="changing-text">Kubernetes</div>
+                <p class="tagline">Simplify cluster management, streamline CI/CD, and boost productivity across your entire DevOps workflow.</p>
+                <a href="#demo" class="cta-button">Book a Demo</a>
             </div>
-        </main>
-        <footer>
-            <p>&copy; 2024 Kubernetes Debugger Pro. All rights reserved.</p>
-        </footer>
+            <div class="hero-image">
+                <img src="alert_preemption.png" alt="Kubernetes Debugger Pro Interface">
+            </div>
+        </div>
+    </main>
+    <div class="word-cloud">
+        Kubernetes • Jenkins • GitHub • JIRA • CI/CD • Docker • Prometheus • Grafana • Helm • Istio • Microservices • DevOps • GitOps • Containers • Orchestration • Monitoring • Logging • Tracing • Alerting • Scaling • Load Balancing • Service Mesh • Security • Compliance • Infrastructure as Code
     </div>
+
+    <script>
+        const words = ['Kubernetes', 'JIRA', 'Jenkins', 'GitHub', 'DevOps', 'CI/CD'];
+        let index = 0;
+        setInterval(() => {
+            document.getElementById('changing-text').textContent = words[index];
+            index = (index + 1) % words.length;
+        }, 2000);
+    </script>
 </body>
 </html>
